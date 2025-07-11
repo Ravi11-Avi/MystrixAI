@@ -294,7 +294,7 @@ nav:hover .newchat-hover-text{
     cursor: pointer;
     font-size: 20px;
  
-    padding: 10px 12px;
+    padding: 10px 15px;
     border-radius: 50%;
 }
 
@@ -420,8 +420,10 @@ nav:hover .newchat-hover-text{
     }
     
     .input-container {
-        width: 95%;
+        width: 100%;
         gap: 5px;
+      padding:5px 5px ;
+
     }
     .input-container input{
         width: 100%;
@@ -430,9 +432,4 @@ nav:hover .newchat-hover-text{
     .chat-AI {
         width: 95%;
     }
-}
-
-.input-icons i, .input-container label {
-    min-width: 44px;
-    min-height: 44px; /* Recommended touch target size */
 }
