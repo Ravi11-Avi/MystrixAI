@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+    <link rel="stylesheet" href="style.css">
+    <title>Mystrix - AI</title>
+</head>
+<body>
+    <nav class="nav">
+        <div>
+            <div class="menuHover">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+             <div class="newchatHover" onclick=newchat()>
+                <i class="fa-solid fa-pen-to-square newchat" ></i>
+                <label class="newchat-hover-text"> New Chat</label>
+            </div>
+            <div id="searchHstory"></div>
+        </div>
+        <i class="fa-solid fa-gear"></i>
+    </nav>
+    <div class="content">
+        <div class="title-bar">
+            <h2 class="headerLogo">MystrixAI</h2>
+            
+                <div class="title-part-b">
+                    <a href="about.html" class="about"><h4>About MystrixAI</h4></a>
+                 <button>Sign in</button>
+            
+            </div>
+        </div>
+        <div class="main-content">
+            <div class="intro-text" id="intro-text">
+                <h1>Meet <span class="main-logo">MystrixAI</span>,</h1>
+                <h1>your personal AI assistant</h1>
+            </div>
+            <div class="chat-AI" id="chat-AI"></div>
+            <div class="main-content-part-2">
+                <div class="input-section">
+                    <div class="input-container">
+                        <label for="fileUpload" class="upload-btn"><i class="fa-solid fa-plus"></i></label>
+                        <input type="file" id="fileUpload" style="display: none;" />
+                        <input type="text" placeholder="Ask Anything ..." id="searchTerm">
+                        <div class="input-icons">
+                            <i class="fa-solid fa-microphone" id="voice-inpute"></i>
+                            <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" fill="blue"  id="searchBtn" onclick=fetchResult()>
+                                    <path d="M2.01 21l20.99-9L2.01 3v7l15 2-15 2z"/>
+                            </svg>
+
+
+                        </div>
+                    </div>
+
+                    <div class="footer-note">
+                    <h5>This is made by using the <span class="referal-project"> <a href="https://aistudio.google.com/" target="_blank">Google Gemini API</a></span> . It's just for practicing and learning.</h5>
+                </div>
+                </div>
+                
+            </div>
+                
+            </div>
+        </div>
+        
+
+    </div>
+</body>
+<script src="script.js"></script>
+<script>
+     document.getElementById("searchTerm").addEventListener("keypress",function(event){
+            if(event.key === 'Enter'){
+            
+                fetchResult()
+            }
+        })
+</script>
+</html>

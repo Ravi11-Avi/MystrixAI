@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About MystrixAI</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --primary: #6366f1;
+      --primary-dark: #4f46e5;
+      --secondary: #10b981;
+      --dark: #1e293b;
+      --light: #f8fafc;
+      --gray: #e2e8f0;
+      --dark-gray: #64748b;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+    
+    body {
+      background-color: #f1f5f9;
+      color: var(--dark);
+      line-height: 1.6;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem 1rem;
+    }
+    
+    /* Header */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 0;
+      margin-bottom: 3rem;
+    }
+    
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      text-decoration: none;
+    }
+    
+    .logo-icon {
+      width: 40px;
+      height: 40px;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: bold;
+    }
+    
+    .logo-text {
+      font-size: 1.5rem;
+      font-weight: 700;
+      background: linear-gradient(to right, var(--primary), var(--secondary));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    
+    .back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem 1rem;
+      background-color: white;
+      border: 1px solid var(--gray);
+      border-radius: 8px;
+      color: var(--dark);
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.2s;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+    }
+    
+    .back-btn:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+    
+    /* About Content */
+    .about-container {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+    
+    @media (min-width: 1024px) {
+      .about-container {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+    
+    /* Creator Profile */
+    .creator-card {
+      background: white;
+      border-radius: 16px;
+      padding: 2rem;
+      box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+      height: fit-content;
+    }
+    
+    .creator-header {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    .creator-avatar {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid var(--gray);
+    }
+    
+    .creator-info h2 {
+      font-size: 1.5rem;
+      margin-bottom: 0.25rem;
+    }
+    
+    .creator-title {
+      color: var(--dark-gray);
+      font-size: 0.9rem;
+    }
+    
+    .creator-bio {
+      margin-bottom: 1.5rem;
+      color: var(--dark-gray);
+    }
+    
+    .social-links {
+      display: flex;
+      gap: 1rem;
+    }
+    
+    .social-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: var(--gray);
+      color: var(--dark);
+      transition: all 0.2s;
+    }
+    
+    .social-link:hover {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white;
+      transform: translateY(-2px);
+    }
+    
+    /* Project Details */
+    .project-details {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+    
+    .project-card {
+      background: white;
+      border-radius: 16px;
+      padding: 2rem;
+      box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+    }
+    
+    .project-card h2 {
+      font-size: 1.25rem;
+      margin-bottom: 1rem;
+      color: var(--primary-dark);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    
+    .project-card h2 i {
+      color: var(--primary);
+    }
+    
+    .section-content {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    
+    .tech-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin: 0.5rem 0;
+    }
+    
+    .tech-pill {
+      background-color: var(--light);
+      padding: 0.25rem 0.75rem;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: var(--primary-dark);
+      border: 1px solid var(--gray);
+    }
+    
+    .challenge-item {
+      display: flex;
+      gap: 0.75rem;
+      margin-bottom: 0.75rem;
+    }
+    
+    .challenge-icon {
+      color: var(--secondary);
+      margin-top: 0.2rem;
+    }
+    
+    .learning-item {
+      padding-left: 1.5rem;
+      position: relative;
+      margin-bottom: 0.5rem;
+    }
+    
+    .learning-item::before {
+      content: "•";
+      color: var(--primary);
+      font-weight: bold;
+      position: absolute;
+      left: 0;
+    }
+    
+    /* Footer */
+    footer {
+      text-align: center;
+      margin-top: 4rem;
+      padding: 2rem 0;
+      color: var(--dark-gray);
+      font-size: 0.9rem;
+    }
+    
+    /* Responsive */
+    @media (max-width: 768px) {
+      .creator-header {
+        flex-direction: column;
+        text-align: center;
+      }
+      
+      .social-links {
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <a href="index.html" class="logo">
+        <div class="logo-icon">M</div>
+        <div class="logo-text">MystrixAI</div>
+      </a>
+      <a href="index.html" class="back-btn">
+        <i class="fas fa-arrow-left"></i>
+        Back to Chat
+      </a>
+    </header>
+    
+    <main>
+      <div class="about-container">
+        <!-- Creator Profile -->
+        <div class="creator-card">
+          <div class="creator-header">
+            <img src="https://avatars.githubusercontent.com/u/198570162?v=4" alt="Ravi" class="creator-avatar">
+            <div class="creator-info">
+              <h2>Ravi</h2>
+              <p class="creator-title">Developer & Creator of MystrixAI</p>
+            </div>
+          </div>
+          
+          <p class="creator-bio">
+            Full-stack developer passionate about AI and building intuitive interfaces. 
+            Created MystrixAI to explore Gemini API capabilities and share knowledge with the community.
+          </p>
+          
+          <div class="social-links">
+            <a href="https://github.com/Ravi11-Avi" target="_blank" class="social-link" title="GitHub">
+              <i class="fab fa-github"></i>
+            </a>
+            <a href="https://x.com/Ravi_Avi11" class="social-link" target="_blank" title="X (Twitter)">
+              <i class="fab fa-x-twitter"></i>
+            </a>
+            <a href="#" class="shttps://www.linkedin.com/in/ravi-ranjan-bhakt-75a286354/" target="_blank" title="LinkedIn">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="https://ravi11-avi.github.io/Portfolio/" target="_blank" class="social-link" title="Portfolio">
+              <i class="fas fa-globe"></i>
+            </a>
+            <a href="https://www.instagram.com/i_willmake_u/" class="social-link" target="_blank" title="Instagram">
+              <i class="fab fa-instagram"></i>
+            </a>
+          </div>
+        </div>
+        
+        <!-- Project Details -->
+        <div class="project-details">
+          <!-- Project Overview -->
+          <div class="project-card">
+            <h2><i class="fas fa-rocket"></i> Project Overview</h2>
+            <div class="section-content">
+              <p>
+                MystrixAI is a conversational AI assistant powered by Google's Gemini API. 
+                It demonstrates how to integrate advanced AI into web applications with clean, 
+                responsive interfaces.
+              </p>
+              
+              <div class="tech-stack">
+                <span class="tech-pill">HTML5</span>
+                <span class="tech-pill">CSS3</span>
+                <span class="tech-pill">JavaScript</span>
+                <span class="tech-pill">Gemini API</span>
+                <span class="tech-pill">Markdown</span>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Development Journey -->
+          <div class="project-card">
+            <h2><i class="fas fa-code"></i> Development Journey</h2>
+            <div class="section-content">
+              <p>
+                Built from scratch without frameworks to understand core concepts. 
+                Focused on creating a seamless chat experience with proper loading states 
+                and error handling.
+              </p>
+            </div>
+          </div>
+          
+          <!-- Challenges Faced -->
+          <div class="project-card">
+            <h2><i class="fas fa-exclamation-triangle"></i> Challenges Faced</h2>
+            <div class="section-content">
+              <div class="challenge-item">
+                <i class="fas fa-bolt challenge-icon"></i>
+                <div>
+                  <strong>API Response Delays:</strong> Implemented loading indicators to improve UX during slow responses
+                </div>
+              </div>
+              
+              <div class="challenge-item">
+                <i class="fas fa-bug challenge-icon"></i>
+                <div>
+                  <strong>Error Handling:</strong> Created robust error messages when API fails
+                </div>
+              </div>
+              
+              <div class="challenge-item">
+                <i class="fas fa-mobile-alt challenge-icon"></i>
+                <div>
+                  <strong>Mobile Responsiveness:</strong> Adjusted UI for smaller screens
+                </div>
+              </div>
+              
+              <div class="challenge-item">
+                <i class="fas fa-spinner challenge-icon"></i>
+                <div>
+                  <strong>State Management:</strong> Managed chat history without frameworks
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Key Learnings -->
+          <div class="project-card">
+            <h2><i class="fas fa-graduation-cap"></i> Key Learnings</h2>
+            <div class="section-content">
+              <p class="learning-item">
+                Deepened understanding of Gemini API's capabilities and limitations
+              </p>
+              
+              <p class="learning-item">
+                Improved vanilla JavaScript state management techniques
+              </p>
+              
+              <p class="learning-item">
+                Learned to implement markdown rendering without libraries
+              </p>
+              
+              <p class="learning-item">
+                Gained experience in creating loading states for async operations
+              </p>
+              
+              <p class="learning-item">
+                Enhanced skills in responsive design and modern CSS
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    
+    <footer>
+      <p>© 2023 MystrixAI | Created with  by Ravi</p>
+    </footer>
+  </div>
+</body>
+</html>
