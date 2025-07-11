@@ -228,7 +228,7 @@ nav:hover .newchat-hover-text{
     gap: 10px;
     position: relative;     /* i want it to fix in the chat such like it doesnot move with scroll */
     bottom: auto;
-    width: 90%;
+    width: 100%;
 }
 @media (min-width: 1024px) {
     .input-section {
@@ -421,9 +421,18 @@ nav:hover .newchat-hover-text{
     
     .input-container {
         width: 95%;
+        gap: 5px;
+    }
+    .input-container input{
+        width: 100%;
     }
     
     .chat-AI {
         width: 95%;
     }
+}
+
+.input-icons i, .input-container label {
+    min-width: 44px;
+    min-height: 44px; /* Recommended touch target size */
 }
