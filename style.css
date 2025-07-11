@@ -407,6 +407,9 @@ nav:hover .newchat-hover-text{
     .nav:hover{
         width: 40%;
     }
+    nav{
+        width: 7%;
+    }
     
     .newchat-hover-text{
         font-size:14px;
