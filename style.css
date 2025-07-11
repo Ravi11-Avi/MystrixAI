@@ -404,12 +404,13 @@ nav:hover .newchat-hover-text{
     .newchatHover{
         gap: 6px;
     }
+    .nav{
+        width: 7%;
+    }
     .nav:hover{
         width: 40%;
     }
-    nav{
-        width: 7%;
-    }
+    
     
     .newchat-hover-text{
         font-size:14px;
